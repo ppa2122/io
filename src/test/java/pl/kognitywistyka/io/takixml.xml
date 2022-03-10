@@ -1,0 +1,23 @@
+<customers>
+    <customer>
+        <firstName>Janina</firstName>
+        <lastName>Nowak</lastName>
+        <birthDate>14-12-1958</birthDate>
+        <registrationDate>10-03-2022</registrationDate>
+        <addreses>
+            <address type="CORRESPONDENCE">
+                <city>Warszawa</city>
+                <postCode>02-001</postCode>
+                <street>Puławska</street>
+                <streetNo>412</streetNo>
+            </address>
+            <address type="LIVING">
+                <city>Warszawa</city>
+                <postCode>02-042</postCode>
+                <street>Ząbkowska</street>
+                <streetNo>14</streetNo>
+                <flatNo>44</flatNo>
+            </address>
+        </addreses>
+    </customer>
+</customers>
