@@ -9,7 +9,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
+import com.thoughtworks.xstream.security.NullPermission;
+import com.thoughtworks.xstream.security.PrimitiveTypePermission;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -74,7 +77,10 @@ public class CustomerStorageTest {
 
     @Test
     public void testStoreAndLoadCustomerXStream() {
-        XStream xstream = new XStream(new StaxDriver());
+        XStream xstream = new XStream(new DomDriver());
+        xstream.addPermission(NullPermission.NULL);
+        xstream.addPermission(PrimitiveTypePermission.PRIMITIVES);
+        xstream.allowTypesByWildcard(new String[] { "pl.kognitywistyka.io.model.**" });
         Customer cst = mockCustomer();
         File file = new File("serial.xml");
         try (FileOutputStream fos = new FileOutputStream(file)) {
