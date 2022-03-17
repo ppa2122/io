@@ -12,7 +12,9 @@ module pl.kognitywistyka.io {
     requires eu.hansolo.tilesfx;
 
     opens pl.kognitywistyka.io to javafx.fxml, xstream;
-    opens pl.kognitywistyka.io.model to xstream;
+    opens pl.kognitywistyka.io.model to xstream, javafx.base;
 
     exports pl.kognitywistyka.io;
+    exports pl.kognitywistyka.io.model;
+    exports pl.kognitywistyka.io.data;
 }
